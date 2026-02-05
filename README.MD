@@ -36,5 +36,5 @@ Event-study framework to quantify market behavior:
 
 1. Clone the repo:
    ```bash
-   git clone [https://github.com/username/Financial-Risk-Analytics.git](https://github.com/maspw/Financial-Risk-Analytics.git)
+   git clone [https://github.com/maspw/Financial-Risk-Analytics.git](https://github.com/maspw/Financial-Risk-Analytics.git)
    ```
