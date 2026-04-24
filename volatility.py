@@ -82,10 +82,11 @@ def main():
         rec_color = 'gray'
         terminal_color = '\033[90m' # Dark Gray
     else:
-        last_price = df[target_col].iloc[-1]
-        last_sma50 = df['SMA_50'].iloc[-1]
-        last_rsi14 = df['RSI_14'].iloc[-1]
-        last_vol_ewma20 = df['Vol_EWMA_20'].iloc[-1]
+        # Ekstrak nilai skalar dengan aman untuk menghindari error ambiguity saat menggunakan yfinance versi baru
+        last_price = float(np.ravel(df[target_col].iloc[-1])[0])
+        last_sma50 = float(np.ravel(df['SMA_50'].iloc[-1])[0])
+        last_rsi14 = float(np.ravel(df['RSI_14'].iloc[-1])[0])
+        last_vol_ewma20 = float(np.ravel(df['Vol_EWMA_20'].iloc[-1])[0])
 
         if last_vol_ewma20 > 0.50:
             recommendation = "AVOID"
